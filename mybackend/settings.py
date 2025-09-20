@@ -14,9 +14,10 @@ from pathlib import Path
 import dj_database_url
 import os
 
+
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.environ.get("postgres://mybackend_db_user:Ahg61UpTCqfKxYkR8MxUENoxCDcUd00Y@dpg-d379vper433s73eiggt0-a.com:5432/mybackend_db")
+        default=os.environ.get("postgresql://mybackend_db_user:Ahg61UpTCqfKxYkR8MxUENoxCDcUd00Y@dpg-d379vper433s73eiggt0-a.oregon-postgres.render.com/mybackend_db")
     )
 }
 ALLOWED_HOSTS = ['mybackend-1-amg5.onrender.com', 'localhost', '127.0.0.1']
