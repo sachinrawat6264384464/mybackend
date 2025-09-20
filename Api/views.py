@@ -10,5 +10,5 @@ def receive_data(request):
     if request.method == "POST":
         data = json.loads(request.body)
         name = data.get("name")
-        email = data.get("email")
-        return JsonResponse({"status": "success", "message": f"Hello {name}, your email {email} received!"})
+        age = data.get("age")
+        return JsonResponse({"message": f"Hello {name}, age {age} received!"})
