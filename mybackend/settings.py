@@ -16,7 +16,7 @@ import os
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL")
+        default=os.environ.get("postgres://mybackend_db_user:Ahg61UpTCqfKxYkR8MxUENoxCDcUd00Y@dpg-d379vper433s73eiggt0-a.com:5432/mybackend_db")
     )
 }
 ALLOWED_HOSTS = ['mybackend-1-amg5.onrender.com', 'localhost', '127.0.0.1']
