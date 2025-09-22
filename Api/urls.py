@@ -14,9 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
+from django.http import JsonResponse
 from .views import receive_data
 
-urlpatterns = [
-    path("api/send-data/", receive_data),
-]
+def api_home(request):
+    return JsonResponse({"message": "API is running successfully 🚀"})
 
+urlpatterns = [
+    path("", api_home),  # /api/ ke liye
+    path("send-data/", receive_data),  # /api/send-data/
+]
