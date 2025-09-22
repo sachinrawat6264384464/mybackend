@@ -1,4 +1,3 @@
-# Api/views.py
 from django.http import JsonResponse
 import json
 
@@ -7,8 +6,9 @@ def receive_data(request):
         try:
             data = json.loads(request.body)
             message = data.get("message", "")
-            # Process message
             return JsonResponse({"status": "success", "message": f"Received: {message}"})
         except Exception as e:
             return JsonResponse({"status": "error", "message": str(e)})
-    return JsonResponse({"status": "error", "message": "Only POST allowed"})
+    else:
+        # GET ya koi aur method aayi to
+        return JsonResponse({"status": "error", "message": "Only POST allowed"})
