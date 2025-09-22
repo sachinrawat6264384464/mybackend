@@ -35,10 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Api',
+    'Api',             # tumhara app
+    'corsheaders',     # ye add karo
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # sabse upar
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -46,6 +48,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+# CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",                       # React local dev
+    "https://deft-kringle-825b66.netlify.app",    # Tumhara deployed React site
 ]
 
 ROOT_URLCONF = 'mybackend.urls'
