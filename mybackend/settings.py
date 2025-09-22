@@ -20,7 +20,13 @@ DATABASES = {
         default=os.environ.get("DATABASE_URL")
     )
 }
-ALLOWED_HOSTS = ["mybackend-5-fzao.onrender.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "mybackend-5-fzao.onrender.com",  # Render backend
+    "deft-kringle-825b66.netlify.app", # Netlify frontend
+    "localhost",
+    "127.0.0.1"
+]
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
