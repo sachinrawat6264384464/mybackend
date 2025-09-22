@@ -1,14 +1,14 @@
-from django.shortcuts import render
-
-# Create your views here.
+# Api/views.py
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 import json
 
-@csrf_exempt
 def receive_data(request):
     if request.method == "POST":
-        data = json.loads(request.body)
-        name = data.get("name")
-        age = data.get("age")
-        return JsonResponse({"message": f"Hello {name}, age {age} received!"})
+        try:
+            data = json.loads(request.body)
+            message = data.get("message", "")
+            # Process message
+            return JsonResponse({"status": "success", "message": f"Received: {message}"})
+        except Exception as e:
+            return JsonResponse({"status": "error", "message": str(e)})
+    return JsonResponse({"status": "error", "message": "Only POST allowed"})
