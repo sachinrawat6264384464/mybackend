@@ -21,8 +21,8 @@ DATABASES = {
     )
 }
 ALLOWED_HOSTS = [
-    "mybackend-5-fzao.onrender.com",  # Render backend
-    "deft-kringle-825b66.netlify.app", # Netlify frontend
+    'mybackend-5-fzao.onrender.com' ,  # Render backend
+    'deft-kringle-825b66.netlify.app', # Netlify frontend
     "localhost",
     "127.0.0.1"
 ]
